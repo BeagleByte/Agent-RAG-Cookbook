@@ -1,0 +1,21 @@
+{
+  "name": "nmap_scanner",
+  "description": "⚠️ LONG-RUNNING OPERATION:  Performs comprehensive network scanning using nmap.  Full port scans take 15-60 minutes. Quick scans take 1-5 minutes.  Always inform the user about the wait time BEFORE starting the scan.",
+  "warning": "This tool may take 15-60 minutes to complete for full scans",
+  "estimated_duration": {
+    "full": "15-60 minutes",
+    "quick": "1-5 minutes"
+  },
+  "parameters": {
+    "target": {
+      "type": "string",
+      "description": "Target IP address or hostname",
+      "required": true
+    },
+    "scan_type":  {
+      "type": "string",
+      "description": "Scan type (full=15-60min, quick=1-5min, version=2-10min)",
+      "default": "full"
+    }
+  }
+}
