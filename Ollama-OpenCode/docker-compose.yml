@@ -1,0 +1,15 @@
+services:
+  opencode:
+    build: .
+    container_name: opencode-client
+    network_mode: "host"
+    user: "1000:1000"
+    environment:
+      - HOME=/home/op
+      - PATH=/home/op/.opencode/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    volumes:
+      - ./opencode/config/config.json:/home/op/.config/opencode/config.json:ro
+      - ~/.gitconfig:/home/op/.gitconfig:ro
+      - ./workspace:/home/op/workspace
+    working_dir: /home/op/workspace
+    tty: true
